@@ -1,4 +1,10 @@
 ﻿Category,Supplier product,Length (mm),Qty,Unit,Unit price inc. GST (AUD),Line total inc. GST (AUD),Notes
+Supplier,Sunset Sleepers,,,,,,Concrete sleepers and galvanised steel posts (steel posts + sleepers below)
+Supplier,Phone,,,,,,"(03) 5906 7312 - Mon-Fri 7:30am-4pm, Sat 9am-12pm"
+Supplier,Website,,,,,,https://www.sunsetsleepers.com.au
+Supplier,Address - Pakenham VIC yard,,,,,,"28 Meadow Parade, Pakenham VIC 3810 (Mon-Fri 7:30am-4pm; Sat by appointment)"
+Supplier,Address - Tottenham VIC yard,,,,,,"423 Somerville Rd, Tottenham VIC 3012 (Mon-Fri 8am-3:30pm)"
+Supplier,Quote / trade price enquiry,,,,,,https://www.sunsetsleepers.com.au/contact-us/ (trade pricing available with ABN)
 Steel post - H-Channel (middle joiner),6000mm (6m) Heavy Duty H-Channel Middle Joiner Galvanised Steel Post (150mm Width - Fits 100mm & 150mm Sleepers),6000,1,pcs,495.00,495.00,
 Steel post - H-Channel (middle joiner),4800mm (4.8m) Heavy Duty H-Channel Middle Joiner Galvanised Steel Post (150mm Width - Fits 100mm & 150mm Sleepers),4800,13,pcs,396.00,5148.00,
 Steel post - H-Channel (middle joiner),4000mm (4m) Heavy Duty H-Channel Middle Joiner Galvanised Steel Post (150mm Width - Fits 100mm & 150mm Sleepers),4000,9,pcs,330.00,2970.00,
