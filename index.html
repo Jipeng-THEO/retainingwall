@@ -30,7 +30,7 @@ h1{font-size:15px;margin:0 0 4px}.hd{padding:12px 14px;border-bottom:1px solid v
 #touchui{display:none;position:absolute;inset:0;pointer-events:none;z-index:4}
 #joy{position:absolute;left:22px;bottom:46px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.25);border:2px solid rgba(255,255,255,.7);pointer-events:auto;touch-action:none}
 #knob{position:absolute;left:50%;top:50%;width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.85);transform:translate(-50%,-50%);box-shadow:0 1px 4px rgba(0,0,0,.4)}
-#eyebtns{position:absolute;right:18px;bottom:52px;display:flex;flex-direction:column;gap:10px;pointer-events:auto}#eyebtns .btn{width:52px;height:52px;font-size:20px;touch-action:none;opacity:.9}
+#eyebtns{position:absolute;right:18px;bottom:52px;display:flex;flex-direction:column;gap:10px;pointer-events:auto;align-items:flex-end}#eyebtns .btn{min-width:52px;height:52px;font-size:18px;touch-action:none;opacity:.92}#flybtn{font-size:14px!important;padding:0 10px}
 #touchtip{position:absolute;left:50%;top:58px;transform:translateX(-50%);background:rgba(20,20,18,.75);color:#fff;font-size:12px;padding:4px 10px;border-radius:6px;white-space:nowrap}
 #c{touch-action:none}
 body.walking #hint{display:none}
@@ -51,7 +51,7 @@ body.walking #hint{display:none}
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 </head><body><div id="app"><div id="view"><canvas id="c"></canvas><div id="labels"></div><div id="cross"></div>
 <div id="walkhelp"></div>
-<div id="touchui"><div id="joy"><div id="knob"></div></div><div id="eyebtns"><button id="eyeup" class="btn">▲</button><button id="eyedn" class="btn">▼</button></div><div id="touchtip"></div></div>
+<div id="touchui"><div id="joy"><div id="knob"></div></div><div id="eyebtns"><button id="flybtn" class="btn">✈</button><button id="eyeup" class="btn">▲</button><button id="eyedn" class="btn">▼</button></div><div id="touchtip"></div></div>
 <div id="top"></div>
 <div id="hint"></div></div>
 <aside id="side"><div class="hd" id="sheethd"><div id="grip"></div><h1 id="title"></h1><div class="mute" id="sum"></div></div>
@@ -70,7 +70,7 @@ const D = JSON.parse(document.getElementById('data').textContent);
 const L = {
  zh:{ title:'Ringwood 挡土墙 · 订料区柱编号', doc:'Ringwood 挡土墙 3D', lang:'English', posts:'柱号', ann:'板尺寸 / 标高（08）', walk:'进入现场（第一人称）', exit:'退出现场',
    hint:'左键拖动旋转 · 右键平移 · 滚轮缩放 · 点挡土墙部件（sleeper / 柱 / 桩 / packing）看数据 · 双击空白回到全景',
-   help:'<b>进入现场</b><br>点这里开始<br>W A S D 走 · 鼠标看 · Shift 快走 · 空格 / C 抬高 / 降低视线<br>准星对准挡土墙部件点左键看数据 · Esc 暂停，再按“退出现场”回到全景',
+   help:'<b>进入现场</b><br>点这里开始<br>W A S D 走 · 鼠标看 · Shift 快走 · 空格 / C 升降（最高 200 m）· F 飞行（朝视线方向飞，可出场地）<br>准星对准挡土墙部件点左键看数据 · Esc 暂停，再按“退出现场”回到全景',
    intro:'点模型里的挡土墙部件（sleeper、钢柱、水泥桩、H4 packing），或者点下面表里的一行。<br>土是 03 场景的施工切地面，混凝土是 06 浇好的板，板上的尺寸和标高来自 08 场景。',
    sum:(S, st) => `订料区柱 ${S.posts} 根（150UC23.4）· 货长 ${st} · sleeper ${S.sleepers} 块 → 订 ${S.order} · 桩 ×${S.posts}`,
    th:['号', '类型', '货长 m', '柱长', '柱顶 RL', '桩长', '桩露', 'H'],
@@ -78,10 +78,10 @@ const L = {
    pier:no => `水泥桩${no ? ' · ' + no + ' 号柱' : ''}`, dia:'直径', pl:'桩长（桩顶 → 桩底）', ftb:'桩顶 / 桩底 RL', gnd:'墙前地面 RL', gndn:'（墙脚 − 100）', exp:'桩露出地面', D:'桩深（S-19，自低侧地面）',
    bay:id => `墙段 ${id}`, sl:'sleeper', sln:n => `${n} 块 × 200（1470×200×100）`, sll:'sleeper 长', full:'（整块）', cut:'（从 1470 切）', ftop:'脚 / 顶 RL', H:'墙高 H', span:'跨长（柱中距）', pp:'柱 / 桩', oz:'订料区', yes:'是', no:'否',
    slp:(b, c) => `sleeper · 墙段 ${b} 从下数第 ${c} 块`, obj:'模型物体', name:'名称', path:'所在组', mat:'材质', zr:'底 / 顶 RL', ht:'高度', ext:'平面范围', extn:'（东西 × 南北）', vol:'体积',
-   kindH:'H 中柱', kindC:'C 端柱', kindA:d => `${d}° 角柱`, home:'全景', touchtip:'左下摇杆走 · 拖动转头 · 轻点挡土墙看数据 · ▲▼ 升降视线', hintTouch:'单指旋转 · 双指捏合缩放 / 拖动平移 · 轻点挡土墙看数据 · 柱号拉近才显示' },
+   kindH:'H 中柱', kindC:'C 端柱', kindA:d => `${d}° 角柱`, home:'全景', fly:'✈ 飞行', flyOn:'✈ 飞行中', touchtip:'左下摇杆走 · 拖动转头 · 轻点挡土墙看数据 · ▲▼ 升降 · ✈ 飞行（可出场地）', hintTouch:'单指旋转 · 双指捏合缩放 / 拖动平移 · 轻点挡土墙看数据 · 柱号拉近才显示' },
  en:{ title:'Ringwood retaining wall · order-zone post numbers', doc:'Ringwood retaining wall 3D', lang:'中文', posts:'Post no.', ann:'Slab sizes / levels (08)', walk:'Walk on site (first person)', exit:'Exit walk',
    hint:'Left-drag rotate · right-drag pan · scroll zoom · click a retaining wall part (sleeper / post / pier / packing) for data · double-click empty space to reset',
-   help:'<b>Walk on site</b><br>Click here to start<br>W A S D walk · mouse look · Shift run · Space / C raise / lower eye level<br>Aim the crosshair at a retaining wall part and left-click for data · Esc pauses, then “Exit walk” returns to overview',
+   help:'<b>Walk on site</b><br>Click here to start<br>W A S D walk · mouse look · Shift run · Space / C up / down (to 200 m) · F fly (follow your view, leave the site)<br>Aim the crosshair at a retaining wall part and left-click for data · Esc pauses, then “Exit walk” returns to overview',
    intro:'Click a retaining wall part in the model (sleeper, steel post, concrete pier, H4 packing), or a row in the table below.<br>Ground is the scene 03 cut surface, concrete is the poured slabs from scene 06, and slab sizes / levels come from scene 08.',
    sum:(S, st) => `Order zone: ${S.posts} posts (150UC23.4) · stock lengths ${st} · ${S.sleepers} sleepers → order ${S.order} · ${S.posts} piers`,
    th:['No.', 'Type', 'Stock m', 'Post L', 'Post top RL', 'Pier L', 'Exposed', 'H'],
@@ -89,7 +89,7 @@ const L = {
    pier:no => `Concrete pier${no ? ' · post No. ' + no : ''}`, dia:'Diameter', pl:'Pier length (top → toe)', ftb:'Pier top / toe RL', gnd:'Ground in front of wall RL', gndn:' (wall foot − 100)', exp:'Pier exposed above ground', D:'Pier depth (S-19, from low-side ground)',
    bay:id => `Wall bay ${id}`, sl:'Sleepers', sln:n => `${n} × 200 (1470×200×100)`, sll:'Sleeper length', full:' (full)', cut:' (cut from 1470)', ftop:'Foot / top RL', H:'Wall height H', span:'Span (post centres)', pp:'Post / pier', oz:'Order zone', yes:'yes', no:'no',
    slp:(b, c) => `Sleeper · wall bay ${b}, course ${c} from bottom`, obj:'Model object', name:'Name', path:'Group', mat:'Material', zr:'Bottom / top RL', ht:'Height', ext:'Plan extent', extn:' (E–W × N–S)', vol:'Volume',
-   kindH:'H post', kindC:'C end post', kindA:d => `${d}° corner post`, home:'Overview', touchtip:'Joystick to walk · drag to look · tap a wall part for data · ▲▼ eye height', hintTouch:'One finger rotate · pinch to zoom / two-finger pan · tap a wall part for data · post numbers show when close' } };
+   kindH:'H post', kindC:'C end post', kindA:d => `${d}° corner post`, home:'Overview', fly:'✈ Fly', flyOn:'✈ Flying', touchtip:'Joystick to walk · drag to look · tap a wall part for data · ▲▼ up/down · ✈ fly (leave the site)', hintTouch:'One finger rotate · pinch to zoom / two-finger pan · tap a wall part for data · post numbers show when close' } };
 let lang = (() => { try { return localStorage.getItem('rw_lang') || 'zh'; } catch (e) { return 'zh'; } })();
 const t = k => L[lang][k];
 const TOUCH = (window.matchMedia && matchMedia('(pointer: coarse)').matches) || ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
@@ -222,6 +222,7 @@ function placeJoy(){ requestAnimationFrame(() => { const h = MOBILE() ? document
 // ---- 第一人称（电脑：锁定鼠标 + WASD；手机 / 平板：左下摇杆走、拖动看、轻点选、▲▼ 升降）
 const plc = new PointerLockControls(camera, document.body); let saved = null; const keys = {};
 const help = document.getElementById('walkhelp'), cross = document.getElementById('cross');
+const flyBtn = document.getElementById('flybtn'); flyBtn.onclick = () => setFly(!flying);
 const touchUI = document.getElementById('touchui'), joy = document.getElementById('joy'), knob = document.getElementById('knob');
 let touchWalk = false; const stick = {x:0, y:0}; let yaw = 0, pitch = 0;
 const dn = new THREE.Raycaster(); dn.far = 80;
@@ -235,9 +236,10 @@ function startWalk(){
   const e = new THREE.Euler().setFromQuaternion(camera.quaternion, 'YXZ'); yaw = e.y; pitch = -0.18; applyLook();   // 视线稍往下，墙在画面中间
   walkBtn.textContent = t('exit'); document.body.classList.add('walking'); setTimeout(resize, 50);
   if (TOUCH){ touchWalk = true; touchUI.style.display = 'block'; cross.style.display = 'block'; applyLook(); document.getElementById('side').classList.remove('open'); placeJoy(); }
-  else help.style.display = 'block';
+  else { help.style.display = 'block'; touchUI.style.display = 'block'; document.getElementById('joy').style.display = 'none'; }
+  setFly(false);
 }
-function stopWalk(){ walking = false; touchWalk = false; document.body.classList.remove('walking'); setTimeout(resize, 50); orbit.enabled = true; help.style.display = 'none'; cross.style.display = 'none'; touchUI.style.display = 'none'; stick.x = stick.y = 0;
+function stopWalk(){ walking = false; touchWalk = false; document.getElementById('joy').style.display = ''; setFly(false); document.body.classList.remove('walking'); setTimeout(resize, 50); orbit.enabled = true; help.style.display = 'none'; cross.style.display = 'none'; touchUI.style.display = 'none'; stick.x = stick.y = 0;
   if (plc.isLocked) plc.unlock(); if (saved){ camera.position.copy(saved.p); orbit.target.copy(saved.t); camera.up.set(0, 1, 0); camera.lookAt(orbit.target); } walkBtn.textContent = t('walk'); }
 help.onclick = () => plc.lock();
 plc.addEventListener('lock', () => { help.style.display = 'none'; cross.style.display = 'block'; });
@@ -266,18 +268,33 @@ const hold = {up:false, dn:false};
 for (const [id, k] of [['eyeup', 'up'], ['eyedn', 'dn']]){ const b = document.getElementById(id);
   b.addEventListener('pointerdown', e => { hold[k] = true; e.preventDefault(); }); for (const ev of ['pointerup', 'pointercancel', 'pointerleave']) b.addEventListener(ev, () => hold[k] = false); }
 const clock = new THREE.Clock();
+let flying = false;
+function setFly(v){ flying = v; flyBtn.classList.toggle('on', v); flyBtn.textContent = v ? t('flyOn') : t('fly'); }
+document.addEventListener('keydown', e => { if (walking && e.code === 'KeyF') setFly(!flying); });
 function walkStep(dt){
   if (!plc.isLocked && !touchWalk) return;
-  let fw, rt, run;
-  if (touchWalk){ fw = stick.y; rt = stick.x; run = Math.hypot(stick.x, stick.y) > 0.92; if (hold.up) eyeH = Math.min(eyeH + 2 * dt, 15); if (hold.dn) eyeH = Math.max(eyeH - 2 * dt, 0.5); }
+  let fw, rt, run, up = 0;
+  if (touchWalk){ fw = stick.y; rt = stick.x; run = Math.hypot(stick.x, stick.y) > 0.92; up = (hold.up ? 1 : 0) - (hold.dn ? 1 : 0); }
   else { fw = (keys.KeyW || keys.ArrowUp ? 1 : 0) - (keys.KeyS || keys.ArrowDown ? 1 : 0); rt = (keys.KeyD || keys.ArrowRight ? 1 : 0) - (keys.KeyA || keys.ArrowLeft ? 1 : 0); run = keys.ShiftLeft || keys.ShiftRight;
-    if (keys.Space) eyeH = Math.min(eyeH + 2 * dt, 15); if (keys.KeyC) eyeH = Math.max(eyeH - 2 * dt, 0.5); }
-  const sp = (run ? 6 : 2.2) * dt;
-  const old = camera.position.clone();
+    up = (keys.Space ? 1 : 0) - (keys.KeyC ? 1 : 0); }
+  const sp = (run ? 8 : 2.5) * dt * (flying ? 2.5 : 1);
+  if (flying){
+    // 飞行：朝视线方向飞（含上下），不贴地，可以出场地
+    const dir = new THREE.Vector3(); camera.getWorldDirection(dir);
+    const side = new THREE.Vector3().crossVectors(dir, camera.up).normalize();
+    camera.position.addScaledVector(dir, fw * sp).addScaledVector(side, rt * sp);
+    camera.position.y += up * 4 * dt * (run ? 3 : 1);
+    const g = groundAt(camera.position.x, camera.position.z, camera.position.y + 0.5);
+    gY = g ?? gY;                                                                   // 场外：地面 = 离开场地前最后踩到的标高
+    if (gY != null && camera.position.y < gY + 0.3) camera.position.y = gY + 0.3;   // 不钻到地下
+    if (gY != null) eyeH = camera.position.y - gY;
+    return;
+  }
+  // 走路：贴地；走出场地就保持高度继续走（不再挡）
+  if (up) eyeH = Math.max(0.5, Math.min(200, eyeH + up * (eyeH > 15 ? 8 : 2) * dt));
   if (fw) plc.moveForward(fw * sp); if (rt) plc.moveRight(rt * sp);
-  const g = groundAt(camera.position.x, camera.position.z, (gY ?? camera.position.y) + 0.6);
-  if (g == null && gY != null) { camera.position.x = old.x; camera.position.z = old.z; }          // 走出场地
-  else if (g != null) gY = g;
+  const g = groundAt(camera.position.x, camera.position.z, Math.max(gY ?? 0, camera.position.y) + 0.6);
+  if (g != null) gY = g;
   if (gY != null) camera.position.y += ((gY + eyeH) - camera.position.y) * Math.min(1, dt * 10);
 }
 // ---- 语言切换：界面、表、面板、08 标注一起换
@@ -287,14 +304,14 @@ function setLang(l){
   document.getElementById('title').textContent = t('title');
   document.getElementById('sum').textContent = t('sum')(S, S.stock.map(([len, n]) => len.toFixed(1) + ' ×' + n).join(lang === 'zh' ? '、' : ', '));
   document.getElementById('hint').textContent = TOUCH ? t('hintTouch') : t('hint'); help.innerHTML = t('help'); document.getElementById('touchtip').textContent = t('touchtip');
-  bPosts.textContent = t('posts'); bHome.textContent = t('home'); bAnn.textContent = t('ann'); walkBtn.textContent = walking ? t('exit') : t('walk'); bLang.textContent = t('lang');
+  bPosts.textContent = t('posts'); bHome.textContent = t('home'); flyBtn.textContent = flying ? t('flyOn') : t('fly'); bAnn.textContent = t('ann'); walkBtn.textContent = walking ? t('exit') : t('walk'); bLang.textContent = t('lang');
   buildTable(); showInfo(lastObj); if (lastObj && lastObj.post != null) markRow(P[lastObj.post].no); buildAnnText();
 }
 // ---- 循环
 function resize(){ const w = view.clientWidth, h = view.clientHeight; renderer.setSize(w, h, false); lineMat.resolution.set(w, h); dimMat.resolution.set(w, h); camera.aspect = w / h; camera.fov = camera.aspect < 1 ? 65 : 45; camera.updateProjectionMatrix(); }
 addEventListener('resize', resize); resize(); home(); setLang(lang);
 const tmp = new THREE.Vector3();
-window.__rw = {SC, P, camera, orbit, pickAt, THREE, V, startWalk, stopWalk, groundAt, setLang};   // 调试用
+window.__rw = {SC, P, camera, orbit, pickAt, THREE, V, startWalk, stopWalk, groundAt, setLang, stick, hold, st:() => ({walking, touchWalk, flying, eyeH, gY}), walkStep, plc};   // 调试用
 renderer.setAnimationLoop(() => {
   const dt = Math.min(clock.getDelta(), 0.1);
   if (walking) walkStep(dt); else orbit.update();
