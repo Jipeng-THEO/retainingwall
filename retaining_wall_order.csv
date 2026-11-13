@@ -1,0 +1,29 @@
+﻿Category,Item,Length (mm),Qty,Unit,Notes
+Steel post,150UC23.4 (supplier H / C / 90-degree channel),6000,1,pcs,H post 1
+Steel post,150UC23.4 (supplier H / C / 90-degree channel),4800,13,pcs,H post 13
+Steel post,150UC23.4 (supplier H / C / 90-degree channel),3900,10,pcs,H post 9; corner post 1
+Steel post,150UC23.4 (supplier H / C / 90-degree channel),3600,6,pcs,H post 4; corner post 2
+Steel post,150UC23.4 (supplier H / C / 90-degree channel),3300,1,pcs,H post 1
+Steel post,150UC23.4 (supplier H / C / 90-degree channel),2700,2,pcs,H post 2
+Steel post,150UC23.4 (supplier H / C / 90-degree channel),2400,3,pcs,H post 3
+Steel post,150UC23.4 (supplier H / C / 90-degree channel),2100,3,pcs,H post 3
+Steel post,150UC23.4 (supplier H / C / 90-degree channel),1500,2,pcs,H post 1; C end post 1
+Steel post,Subtotal,,41,pcs,Total 154.2 m; rounded up to supplier stock lengths
+Sleeper,Concrete sleeper 1500 x 200 x 100,1500,335,pcs,"Full length, no cutting"
+Sleeper,Concrete sleeper 1500 x 200 x 100 (cut on site),1462,4,pcs,Cut from 1500 to 1462
+Sleeper,Concrete sleeper 1500 x 200 x 100 (cut on site),1092,8,pcs,Cut from 1500 to 1092
+Sleeper,Concrete sleeper 1500 x 200 x 100 (cut on site),741,18,pcs,Cut from 1500 to 741
+Sleeper,Subtotal,,365,pcs,Net quantity from model
+Sleeper,Order quantity,1500,390,pcs,"+5% installation allowance, rounded up to 10"
+Concrete pier,Bored pier dia 600,2800,1,pcs,Concrete 0.79 m3
+Concrete pier,Bored pier dia 600,2400,11,pcs,Concrete 7.46 m3
+Concrete pier,Bored pier dia 600,2200,2,pcs,Concrete 1.24 m3
+Concrete pier,Bored pier dia 600,1925,16,pcs,Concrete 8.71 m3
+Concrete pier,Bored pier dia 600,1600,1,pcs,Concrete 0.45 m3
+Concrete pier,Bored pier dia 600,1400,2,pcs,Concrete 0.79 m3
+Concrete pier,Bored pier dia 600,1200,3,pcs,Concrete 1.02 m3
+Concrete pier,Bored pier dia 600,1000,3,pcs,Concrete 0.85 m3
+Concrete pier,Bored pier dia 600,800,2,pcs,Concrete 0.45 m3
+Concrete pier,Subtotal,,41,pcs,"Concrete approx. 21.77 m3; pier length = exposed post (1:1): west boundary wall 11, north wall H > 2 m 14; per S-19 table: 16"
+
+Notes,Order zone = west boundary wall + both NW pocket walls + north wall to x 36.8 m,,41,bays,Post spacing 1530 c/c; source ringwood_r1_rw.json (rw_prep.py)
