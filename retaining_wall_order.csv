@@ -31,14 +31,14 @@ Sleeper,Net quantity from model,,359,pcs,,,
 Sleeper,Plain Smooth 1500 x 200 x 100mm Heavy Duty Concrete Sleeper (Plain Grey) - ORDER,1500,369,pcs,41.80,15424.20,Net 359 + 10 spare
 Concrete pier (by others),Bored concrete pier dia 600mm,2800,1,pcs,,,Concrete 0.79 m3
 Concrete pier (by others),Bored concrete pier dia 600mm,2600,6,pcs,,,Concrete 4.41 m3
-Concrete pier (by others),Bored concrete pier dia 600mm,2400,5,pcs,,,Concrete 3.39 m3
-Concrete pier (by others),Bored concrete pier dia 600mm,2200,2,pcs,,,Concrete 1.24 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,2400,6,pcs,,,Concrete 4.07 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,2200,1,pcs,,,Concrete 0.62 m3
 Concrete pier (by others),Bored concrete pier dia 600mm,1925,16,pcs,,,Concrete 8.71 m3
 Concrete pier (by others),Bored concrete pier dia 600mm,1600,1,pcs,,,Concrete 0.45 m3
 Concrete pier (by others),Bored concrete pier dia 600mm,1400,2,pcs,,,Concrete 0.79 m3
 Concrete pier (by others),Bored concrete pier dia 600mm,1200,3,pcs,,,Concrete 1.02 m3
 Concrete pier (by others),Bored concrete pier dia 600mm,1000,3,pcs,,,Concrete 0.85 m3
 Concrete pier (by others),Bored concrete pier dia 600mm,800,2,pcs,,,Concrete 0.45 m3
-Concrete pier (by others),Subtotal,,41,pcs,,,"Concrete approx. 22.11 m3; pier length = exposed post (1:1): west boundary wall 11, north wall H > 2 m 14; per S-19 table: 16"
+Concrete pier (by others),Subtotal,,41,pcs,,,"Concrete approx. 22.17 m3; pier length = exposed post (1:1): west boundary wall 11, north wall H > 2 m 14; per S-19 table: 16"
 TOTAL,Sunset Sleepers items (steel posts + sleepers),,,,,29178.05,Retail prices inc. GST from sunsetsleepers.com.au on 2026-11-14 (VIC); trade pricing may be lower; delivery not included
 Notes,Order zone = west boundary wall + both NW pocket walls + north wall to x 36.8 m,,41,bays,,,Post spacing 1530 c/c; source ringwood_r1_rw.json (rw_prep.py)
