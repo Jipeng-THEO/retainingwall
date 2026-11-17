@@ -26,11 +26,11 @@ Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,4,pcs,
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,17,pcs,,,Cut on site from 1500 to 741
 Sleeper,Net quantity from model,,422,pcs,,,
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey) - ORDER,1500,432,pcs,37.40,16156.80,Net 422 + 10 spare
-Concrete pier (by others),Bored concrete pier dia 600mm,3000,1,pcs,,,Concrete 0.85 m3
-Concrete pier (by others),Bored concrete pier dia 600mm,2800,7,pcs,,,Concrete 5.54 m3
-Concrete pier (by others),Bored concrete pier dia 600mm,2600,8,pcs,,,Concrete 5.88 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,3100,1,pcs,,,Concrete 0.88 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,2900,7,pcs,,,Concrete 5.74 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,2700,8,pcs,,,Concrete 6.11 m3
 Concrete pier (by others),Bored concrete pier dia 600mm,1925,17,pcs,,,Concrete 9.25 m3
 Concrete pier (by others),Bored concrete pier dia 450mm,1325,10,pcs,,,Concrete 2.11 m3
-Concrete pier (by others),Subtotal,,43,pcs,,,Concrete approx. 23.63 m3; posts on bays H > 2200 (outside S-19 table): pier length = exposed post length (1:1): 16; per S-19 table: 27
+Concrete pier (by others),Subtotal,,43,pcs,,,"Concrete approx. 24.08 m3; posts on bays H > 2200 (outside S-19 table): post embedded in pier = exposed post length (1:1), pier 100 deeper: 16; per S-19 table: 27"
 TOTAL,Sunset Sleepers items (steel posts + sleepers),,,,,30911.77,Retail prices inc. GST from sunsetsleepers.com.au on 2026-11-17 (VIC); trade pricing may be lower; delivery not included
 Notes,Order zone = west boundary wall + both NW pocket walls + north wall to x 36.8 m,,43,bays,,,Post spacing 1530 c/c; source ringwood_r1_rw.json (rw_prep.py)
