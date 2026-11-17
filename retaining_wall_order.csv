@@ -5,11 +5,11 @@ Supplier,Website,,,,,,https://www.sunsetsleepers.com.au
 Supplier,Address - Pakenham VIC yard,,,,,,"28 Meadow Parade, Pakenham VIC 3810 (Mon-Fri 7:30am-4pm; Sat by appointment)"
 Supplier,Address - Tottenham VIC yard,,,,,,"423 Somerville Rd, Tottenham VIC 3012 (Mon-Fri 8am-3:30pm)"
 Supplier,Quote / trade price enquiry,,,,,,https://www.sunsetsleepers.com.au/contact-us/ (trade pricing available with ABN)
-Steel post - H-Channel (middle joiner),5400mm (5.4m) Heavy Duty H-Channel Middle Joiner Galvanised Steel Post (150mm Width - Fits 100mm & 150mm Sleepers),5400,1,pcs,445.50,445.50,
-Steel post - H-Channel (middle joiner),4800mm (4.8m) Heavy Duty H-Channel Middle Joiner Galvanised Steel Post (150mm Width - Fits 100mm & 150mm Sleepers),4800,15,pcs,396.00,5940.00,
+Steel post - H-Channel (middle joiner),6000mm (6m) Heavy Duty H-Channel Middle Joiner Galvanised Steel Post (150mm Width - Fits 100mm & 150mm Sleepers),6000,9,pcs,495.00,4455.00,
+Steel post - H-Channel (middle joiner),5400mm (5.4m) Heavy Duty H-Channel Middle Joiner Galvanised Steel Post (150mm Width - Fits 100mm & 150mm Sleepers),5400,7,pcs,445.50,3118.50,
 Steel post - H-Channel (middle joiner),4000mm (4m) Heavy Duty H-Channel Middle Joiner Galvanised Steel Post (150mm Width - Fits 100mm & 150mm Sleepers),4000,10,pcs,330.00,3300.00,
 Steel post - H-Channel (middle joiner),3600mm (3.6m) Heavy Duty H-Channel Middle Joiner Galvanised Steel Post (150mm Width - Fits 100mm & 150mm Sleepers),3600,5,pcs,297.00,1485.00,
-Steel post - H-Channel (middle joiner),Subtotal,,31,pcs,,11170.50,135.4 m of post
+Steel post - H-Channel (middle joiner),Subtotal,,31,pcs,,12358.50,149.8 m of post
 Steel post - 90-degree right angle (corner),4000mm (4m) Heavy Duty 90 Degree Galvanised Steel Right Angle Post (150mm Width - Fits 100mm & 150mm Sleepers),4000,2,pcs,638.00,1276.00,
 Steel post - 90-degree right angle (corner),Subtotal,,2,pcs,,1276.00,8.0 m of post
 Steel post 100mm - H-Channel (middle joiner),2700mm (2.7m) H-Channel Middle Joiner Galvanised Steel Post (100mm Width - Fits 80mm Sleepers),2700,7,pcs,115.53,808.71,
@@ -19,15 +19,18 @@ Steel post 100mm - C-Channel (end panel),2400mm (2.4m) C-Channel End Panel Galva
 Steel post 100mm - C-Channel (end panel),Subtotal,,1,pcs,,76.30,2.4 m of post
 Steel post 100mm - 90-degree right angle (corner),2100mm (2.1m) 90 Degree Galvanised Steel Right Angle Post (100mm Width - Fits 80mm Sleepers),2100,1,pcs,182.26,182.26,
 Steel post 100mm - 90-degree right angle (corner),Subtotal,,1,pcs,,182.26,2.1 m of post
-Steel post,Total steel posts,,43,pcs,,13616.47,"Exact count, no spares; per S-19 table: 100UC14.8 (100mm posts) for H<=1400, 150UC23.4 (150mm posts) above; lengths rounded up to Sunset stock lengths; 150mm posts need H4 timber packing behind 80mm sleepers"
+Steel post,Total steel posts,,43,pcs,,14804.47,"Exact count, no spares; per S-19 table: 100UC14.8 (100mm posts) for H<=1400, 150UC23.4 (150mm posts) above; lengths rounded up to Sunset stock lengths; 150mm posts need H4 timber packing behind 80mm sleepers"
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,396,pcs,,,Installed full length
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,6,pcs,,,Cut on site from 1500 to 1462
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,4,pcs,,,Cut on site from 1500 to 1092
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,17,pcs,,,Cut on site from 1500 to 741
 Sleeper,Net quantity from model,,423,pcs,,,
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey) - ORDER,1500,433,pcs,37.40,16194.20,Net 423 + 10 spare
-Concrete pier (by others),Bored concrete pier dia 600mm,1925,33,pcs,,,Concrete 17.96 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,3000,1,pcs,,,Concrete 0.85 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,2800,8,pcs,,,Concrete 6.33 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,2600,7,pcs,,,Concrete 5.15 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,1925,17,pcs,,,Concrete 9.25 m3
 Concrete pier (by others),Bored concrete pier dia 450mm,1325,10,pcs,,,Concrete 2.11 m3
-Concrete pier (by others),Subtotal,,43,pcs,,,"Concrete approx. 20.07 m3; pier length = exposed post (1:1): west boundary wall 0, north wall H > 2 m 0; per S-19 table: 43"
-TOTAL,Sunset Sleepers items (steel posts + sleepers),,,,,29810.67,Retail prices inc. GST from sunsetsleepers.com.au on 2026-11-17 (VIC); trade pricing may be lower; delivery not included
+Concrete pier (by others),Subtotal,,43,pcs,,,Concrete approx. 23.69 m3; posts on bays H > 2200 (outside S-19 table): pier length = exposed post length (1:1): 16; per S-19 table: 27
+TOTAL,Sunset Sleepers items (steel posts + sleepers),,,,,30998.67,Retail prices inc. GST from sunsetsleepers.com.au on 2026-11-17 (VIC); trade pricing may be lower; delivery not included
 Notes,Order zone = west boundary wall + both NW pocket walls + north wall to x 36.8 m,,43,bays,,,Post spacing 1530 c/c; source ringwood_r1_rw.json (rw_prep.py)
