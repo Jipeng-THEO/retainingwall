@@ -12,22 +12,22 @@ Steel post - H-Channel (middle joiner),3600mm (3.6m) Heavy Duty H-Channel Middle
 Steel post - H-Channel (middle joiner),Subtotal,,31,pcs,,11170.50,135.4 m of post
 Steel post - 90-degree right angle (corner),4000mm (4m) Heavy Duty 90 Degree Galvanised Steel Right Angle Post (150mm Width - Fits 100mm & 150mm Sleepers),4000,2,pcs,638.00,1276.00,
 Steel post - 90-degree right angle (corner),Subtotal,,2,pcs,,1276.00,8.0 m of post
-Steel post 100mm - H-Channel (middle joiner),3000mm (3m) H-Channel Middle Joiner Galvanised Steel Post (100mm Width - Fits 80mm Sleepers),3000,1,pcs,128.37,128.37,
 Steel post 100mm - H-Channel (middle joiner),2700mm (2.7m) H-Channel Middle Joiner Galvanised Steel Post (100mm Width - Fits 80mm Sleepers),2700,7,pcs,115.53,808.71,
-Steel post 100mm - H-Channel (middle joiner),Subtotal,,8,pcs,,937.08,21.9 m of post
+Steel post 100mm - H-Channel (middle joiner),2400mm (2.4m) H-Channel Middle Joiner Galvanised Steel Post (100mm Width - Fits 80mm Sleepers),2400,1,pcs,102.70,102.70,
+Steel post 100mm - H-Channel (middle joiner),Subtotal,,8,pcs,,911.41,21.3 m of post
 Steel post 100mm - C-Channel (end panel),2400mm (2.4m) C-Channel End Panel Galvanised Steel Post (100mm Width - Fits 80mm Sleepers),2400,1,pcs,76.30,76.30,
 Steel post 100mm - C-Channel (end panel),Subtotal,,1,pcs,,76.30,2.4 m of post
-Steel post 100mm - 90-degree right angle (corner),2400mm (2.4m) 90 Degree Galvanised Steel Right Angle Post (100mm Width - Fits 80mm Sleepers),2400,1,pcs,208.30,208.30,
-Steel post 100mm - 90-degree right angle (corner),Subtotal,,1,pcs,,208.30,2.4 m of post
-Steel post,Total steel posts,,43,pcs,,13668.18,"Exact count, no spares; per S-19 table: 100UC14.8 (100mm posts) for H<=1400, 150UC23.4 (150mm posts) above; lengths rounded up to Sunset stock lengths; 150mm posts need H4 timber packing behind 80mm sleepers"
-Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,398,pcs,,,Installed full length
+Steel post 100mm - 90-degree right angle (corner),2100mm (2.1m) 90 Degree Galvanised Steel Right Angle Post (100mm Width - Fits 80mm Sleepers),2100,1,pcs,182.26,182.26,
+Steel post 100mm - 90-degree right angle (corner),Subtotal,,1,pcs,,182.26,2.1 m of post
+Steel post,Total steel posts,,43,pcs,,13616.47,"Exact count, no spares; per S-19 table: 100UC14.8 (100mm posts) for H<=1400, 150UC23.4 (150mm posts) above; lengths rounded up to Sunset stock lengths; 150mm posts need H4 timber packing behind 80mm sleepers"
+Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,396,pcs,,,Installed full length
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,6,pcs,,,Cut on site from 1500 to 1462
-Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,5,pcs,,,Cut on site from 1500 to 1092
+Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,4,pcs,,,Cut on site from 1500 to 1092
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,17,pcs,,,Cut on site from 1500 to 741
-Sleeper,Net quantity from model,,426,pcs,,,
-Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey) - ORDER,1500,436,pcs,37.40,16306.40,Net 426 + 10 spare
+Sleeper,Net quantity from model,,423,pcs,,,
+Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey) - ORDER,1500,433,pcs,37.40,16194.20,Net 423 + 10 spare
 Concrete pier (by others),Bored concrete pier dia 600mm,1925,33,pcs,,,Concrete 17.96 m3
 Concrete pier (by others),Bored concrete pier dia 450mm,1325,10,pcs,,,Concrete 2.11 m3
 Concrete pier (by others),Subtotal,,43,pcs,,,"Concrete approx. 20.07 m3; pier length = exposed post (1:1): west boundary wall 0, north wall H > 2 m 0; per S-19 table: 43"
-TOTAL,Sunset Sleepers items (steel posts + sleepers),,,,,29974.58,Retail prices inc. GST from sunsetsleepers.com.au on 2026-11-17 (VIC); trade pricing may be lower; delivery not included
+TOTAL,Sunset Sleepers items (steel posts + sleepers),,,,,29810.67,Retail prices inc. GST from sunsetsleepers.com.au on 2026-11-17 (VIC); trade pricing may be lower; delivery not included
 Notes,Order zone = west boundary wall + both NW pocket walls + north wall to x 36.8 m,,43,bays,,,Post spacing 1530 c/c; source ringwood_r1_rw.json (rw_prep.py)
