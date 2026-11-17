@@ -72,7 +72,7 @@ const D = JSON.parse(document.getElementById('data').textContent);
 // ---- 中 / 英
 const L = {
  zh:{ title:'Ringwood 挡土墙 · 订料区柱编号', doc:'Ringwood 挡土墙 3D', lang:'English', posts:'柱号', ann:'板尺寸 / 标高（08）', walk:'进入现场（第一人称）', exit:'退出现场',
-   hint:'左键拖动旋转 · 右键平移 · 滚轮缩放 · 点挡土墙部件（sleeper / 柱 / 桩 / packing）看数据 · 双击空白回到全景',
+   hint:'左键拖动旋转 · 右键拖动平移 · 滚轮朝鼠标位置缩放 · 双击模型 = 以那一点为中心 · 双击空白回全景 · 点挡土墙部件看数据',
    help:'<b>进入现场</b><br>点这里开始<br>W A S D 走 · 鼠标看 · Shift 快走 · 空格 / C 升降（最高 200 m）· F 飞行（朝视线方向飞，可出场地）<br>准星对准挡土墙部件点左键看数据 · Esc 暂停，再按“退出现场”回到全景',
    intro:'点模型里的挡土墙部件（sleeper、钢柱、水泥桩、H4 packing），或者点下面表里的一行。<br>土是 03 场景的施工切地面，混凝土是 06 浇好的板，板上的尺寸和标高来自 08 场景。',
    sum:(S, st) => `订料区柱 ${S.posts} 根（按 S-19：100UC14.8 / 150UC23.4）· 货长 ${st} · sleeper ${S.sleepers} 块 → 订 ${S.order} · 桩 ×${S.posts}`,
@@ -83,7 +83,7 @@ const L = {
    slp:(b, c) => `sleeper · 墙段 ${b} 从下数第 ${c} 块`, obj:'模型物体', name:'名称', path:'所在组', mat:'材质', zr:'底 / 顶 RL', ht:'高度', ext:'平面范围', extn:'（东西 × 南北）', vol:'体积',
    kindH:'H 中柱', kindC:'C 端柱', kindA:d => `${d}° 角柱`, ord:'订料清单（订料区）', ordPost:'钢柱 100UC14.8 / 150UC23.4（按供应商货长，就高不就低）', ordStock:'货长', ordN:'根数', ordKind:'类型', ordSub:'小计', ptH:'H 型中柱', ptC:'C 型端柱', ptA:'90° 角柱', kH:'H 中柱', kC:'C 端柱', kA:'角柱', ordTot:'合计', ordSl:'Sleeper 1500×200×80（混凝土）', slFull:'整块 1500', slCut:l => `切成 ${l}（从 1500 切）`, slOrder:(t, o) => `共 ${t} 块，多订 ${o - t} 块备用 → 订 <b>${o}</b> 块（钢柱不多订）`, ordPier:'水泥桩（西边界墙 + 北墙 >2 m：桩长 = 露出钢柱 1:1；其他按 S-19）', rule:'桩长规则', rule_11west:'1 : 1（西边界墙，不受 S-19）', rule_11:'1 : 1（北墙高 > 2 m）', rule_S19:'S-19 表', pierDL:'直径 × 桩长', pierM3:(n, m) => `共 ${n} 根，混凝土约 <b>${m} m³</b>`, pierShort:n => `其中 ${n} 根比 S-19 要求的桩深浅（表里标红），要结构确认`, ordNote:b => `订料区 = 西墙 + 西北口袋两边 + 北墙到 x 36.8 m，共 ${b} 跨`, home:'全景', fly:'✈ 飞行', flyOn:'✈ 飞行中', touchtip:'左下摇杆走 · 拖动转头 · 轻点挡土墙看数据 · ▲▼ 升降 · ✈ 飞行（可出场地）', hintTouch:'单指旋转 · 双指捏合缩放 / 拖动平移 · 轻点挡土墙看数据 · 柱号拉近才显示' },
  en:{ title:'Ringwood retaining wall · order-zone post numbers', doc:'Ringwood retaining wall 3D', lang:'中文', posts:'Post no.', ann:'Slab sizes / levels (08)', walk:'Walk on site (first person)', exit:'Exit walk',
-   hint:'Left-drag rotate · right-drag pan · scroll zoom · click a retaining wall part (sleeper / post / pier / packing) for data · double-click empty space to reset',
+   hint:'Left-drag rotate · right-drag pan · scroll zooms to the cursor · double-click the model to centre there · double-click empty space to reset · click a wall part for data',
    help:'<b>Walk on site</b><br>Click here to start<br>W A S D walk · mouse look · Shift run · Space / C up / down (to 200 m) · F fly (follow your view, leave the site)<br>Aim the crosshair at a retaining wall part and left-click for data · Esc pauses, then “Exit walk” returns to overview',
    intro:'Click a retaining wall part in the model (sleeper, steel post, concrete pier, H4 packing), or a row in the table below.<br>Ground is the scene 03 cut surface, concrete is the poured slabs from scene 06, and slab sizes / levels come from scene 08.',
    sum:(S, st) => `Order zone: ${S.posts} posts (per S-19: 100UC14.8 / 150UC23.4) · stock lengths ${st} · ${S.sleepers} sleepers → order ${S.order} · ${S.posts} piers`,
@@ -104,6 +104,11 @@ const renderer = new THREE.WebGLRenderer({canvas, antialias:true}); renderer.set
 const scene = new THREE.Scene(); scene.background = new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || '#eceae4');
 const camera = new THREE.PerspectiveCamera(45, 1, 0.05, 2000);
 const orbit = new OrbitControls(camera, canvas); orbit.enableDamping = true; orbit.screenSpacePanning = true;
+// 2026-11-18：视角好控制一点——滚轮朝鼠标所指的位置缩放（不再总是朝场地中心）；不能转到地面以下；能贴近看；双击模型 = 以那一点为中心
+orbit.zoomToCursor = true; orbit.dampingFactor = 0.18; orbit.zoomSpeed = 1.1; orbit.rotateSpeed = 0.75; orbit.panSpeed = 1.0;
+orbit.minDistance = 0.8; orbit.maxDistance = 260; orbit.maxPolarAngle = Math.PI / 2 - 0.03;
+orbit.mouseButtons = {LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.PAN, RIGHT: THREE.MOUSE.PAN};
+orbit.touches = {ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN};
 scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8576, 1.6)); const sun = new THREE.DirectionalLight(0xffffff, 1.5); sun.position.set(-30, 60, 40); scene.add(sun);
 // 坐标：x 东 / y 北 / RL → three：X = x − 18, Y = RL − 124, Z = −(y − 22)（m）
 const OX = 18, OY = 22, OZ = 124;
@@ -209,13 +214,22 @@ function pickAt(ndc){ ray.setFromCamera(ndc, camera); const hit = ray.intersectO
 let down = null; canvas.addEventListener('pointerdown', e => down = [e.clientX, e.clientY]);
 canvas.addEventListener('pointerup', e => { if (walking || !down || Math.hypot(e.clientX - down[0], e.clientY - down[1]) > 4) return;
   const r = canvas.getBoundingClientRect(); pickAt(new THREE.Vector2((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1)); });
-canvas.addEventListener('dblclick', () => { if (!walking) home(); });
+canvas.addEventListener('dblclick', e => { if (walking) return;
+  const r = canvas.getBoundingClientRect(); ray.setFromCamera(new THREE.Vector2((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1), camera);
+  const hit = ray.intersectObjects(SCN.meshes, false)[0];
+  if (!hit){ home(); return; }                                   // 双击空白 = 回全景
+  const off = camera.position.clone().sub(orbit.target); off.setLength(Math.min(off.length(), Math.max(6, camera.position.distanceTo(hit.point) * 0.6)));
+  orbit.target.copy(hit.point); camera.position.copy(hit.point.clone().add(off)); });   // 双击模型 = 以那一点为旋转 / 缩放中心，并拉近一点
+function lookFrom(tx, ty, tz, px, py, pz){ if (walking) return; orbit.target.set(tx, ty, tz); camera.position.set(px, py, pz); }
 // ---- 按钮
 const top = document.getElementById('top');
 function tbtn(on, fn, cls){ const b = document.createElement('button'); b.className = 'btn' + (on ? ' on' : '') + (cls ? ' ' + cls : ''); b.onclick = () => fn(b); top.appendChild(b); return b; }
 const bPosts = tbtn(true, b => { b.classList.toggle('on'); labels.style.display = b.classList.contains('on') ? '' : 'none'; });
 const bAnn = tbtn(true, b => { b.classList.toggle('on'); annG.visible = b.classList.contains('on'); });
 const bHome = tbtn(false, () => { if (!walking) home(); });
+const bWest = tbtn(false, () => lookFrom(-18, 4.6, -2.6, 2, 13, -2.6));          // 西墙：从院内往西看
+const bPocket = tbtn(false, () => lookFrom(-16, 5, -15.6, -5, 12, -6));         // 西北口袋
+const bNorth = tbtn(false, () => lookFrom(1.5, 4, -18.6, 1.5, 16, 12));         // 北墙：从院内往北看
 const walkBtn = tbtn(false, () => walking ? stopWalk() : startWalk(), 'go');
 const bLang = tbtn(false, () => setLang(lang === 'zh' ? 'en' : 'zh'), 'lang');
 function home(){ orbit.target.set(0, 4.5, 0); if (camera.aspect < 1) camera.position.set(44, 74, 66); else camera.position.set(34, 38, 40); }
@@ -317,7 +331,7 @@ function setLang(l){
   document.getElementById('title').textContent = t('title');
   document.getElementById('sum').textContent = t('sum')(S, S.stock.map(([len, n]) => len.toFixed(1) + ' ×' + n).join(lang === 'zh' ? '、' : ', '));
   document.getElementById('hint').textContent = TOUCH ? t('hintTouch') : t('hint'); help.innerHTML = t('help'); document.getElementById('touchtip').textContent = t('touchtip');
-  bPosts.textContent = t('posts'); bHome.textContent = t('home'); flyBtn.textContent = flying ? t('flyOn') : t('fly'); bAnn.textContent = t('ann'); walkBtn.textContent = walking ? t('exit') : t('walk'); bLang.textContent = t('lang');
+  bPosts.textContent = t('posts'); bHome.textContent = t('home'); bWest.textContent = lang === 'zh' ? '西墙' : 'West wall'; bPocket.textContent = lang === 'zh' ? '口袋' : 'Pocket'; bNorth.textContent = lang === 'zh' ? '北墙' : 'North wall'; flyBtn.textContent = flying ? t('flyOn') : t('fly'); bAnn.textContent = t('ann'); walkBtn.textContent = walking ? t('exit') : t('walk'); bLang.textContent = t('lang');
   buildTable(); buildOrder(); showInfo(lastObj); if (lastObj && lastObj.post != null) markRow(P[lastObj.post].no); buildAnnText();
 }
 // ---- 循环
