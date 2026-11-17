@@ -4,15 +4,16 @@
 3,Steel post - H-Channel (middle joiner),"150UC23.4 H-Channel hot-dip galvanised retaining wall post - middle joiner, for 80mm sleepers with H4 packing (S-19)",4000,10,pcs,,,Stock length (already rounded up from required post length)
 4,Steel post - H-Channel (middle joiner),"150UC23.4 H-Channel hot-dip galvanised retaining wall post - middle joiner, for 80mm sleepers with H4 packing (S-19)",3600,5,pcs,,,Stock length (already rounded up from required post length)
 5,Steel post - 90-degree corner,"150mm 90-degree right angle hot-dip galvanised retaining wall corner post, for 80mm sleepers with H4 packing",4000,2,pcs,,,Stock length (already rounded up from required post length)
-6,Steel post - H-Channel (middle joiner),"100UC14.8 H-Channel hot-dip galvanised retaining wall post - middle joiner, fits 80mm sleepers (S-19)",2700,7,pcs,,,Stock length (already rounded up from required post length)
-7,Steel post - H-Channel (middle joiner),"100UC14.8 H-Channel hot-dip galvanised retaining wall post - middle joiner, fits 80mm sleepers (S-19)",2400,1,pcs,,,Stock length (already rounded up from required post length)
-8,Steel post - C-Channel (end post),"100PFC C-Channel hot-dip galvanised retaining wall post - end panel, fits 80mm sleepers",2400,1,pcs,,,Stock length (already rounded up from required post length)
-9,Steel post - 90-degree corner,"100mm 90-degree right angle hot-dip galvanised retaining wall corner post, fits 80mm sleepers",2100,1,pcs,,,Stock length (already rounded up from required post length)
-10,Concrete sleeper,"Plain smooth concrete sleeper 1500 x 200 x 80mm, reinforced (2 x N12), 40 MPa, plain grey (S-19: 80mm thk concrete sleeper)",1500,407,pcs,,,"Net 397 + 10 spare; 370 installed full length, 6 cut to 1462, 4 cut to 1092, 17 cut to 741 on site"
-11,Concrete pier,"Bored concrete pier dia 600mm (drill + pour, steel post cast in)",3100,1,pcs,,,Concrete 0.88 m3
-12,Concrete pier,"Bored concrete pier dia 600mm (drill + pour, steel post cast in)",2900,7,pcs,,,Concrete 5.74 m3
-13,Concrete pier,"Bored concrete pier dia 600mm (drill + pour, steel post cast in)",2700,7,pcs,,,Concrete 5.34 m3
-14,Concrete pier,"Bored concrete pier dia 600mm (drill + pour, steel post cast in)",1925,17,pcs,,,Concrete 9.25 m3
-15,Concrete pier,"Bored concrete pier dia 450mm (drill + pour, steel post cast in)",1325,10,pcs,,,Concrete 2.11 m3
-,Concrete pier,Total concrete for piers,,23.32,m3,,,42 piers
+6,Steel post - H-Channel (middle joiner),"100UC14.8 H-Channel hot-dip galvanised retaining wall post - middle joiner, fits 80mm sleepers (S-19)",3000,3,pcs,,,Stock length (already rounded up from required post length)
+7,Steel post - H-Channel (middle joiner),"100UC14.8 H-Channel hot-dip galvanised retaining wall post - middle joiner, fits 80mm sleepers (S-19)",2700,4,pcs,,,Stock length (already rounded up from required post length)
+8,Steel post - H-Channel (middle joiner),"100UC14.8 H-Channel hot-dip galvanised retaining wall post - middle joiner, fits 80mm sleepers (S-19)",2400,1,pcs,,,Stock length (already rounded up from required post length)
+9,Steel post - C-Channel (end post),"100PFC C-Channel hot-dip galvanised retaining wall post - end panel, fits 80mm sleepers",2400,1,pcs,,,Stock length (already rounded up from required post length)
+10,Steel post - 90-degree corner,"100mm 90-degree right angle hot-dip galvanised retaining wall corner post, fits 80mm sleepers",2400,1,pcs,,,Stock length (already rounded up from required post length)
+11,Concrete sleeper,"Plain smooth concrete sleeper 1500 x 200 x 80mm, reinforced (2 x N12), 40 MPa, plain grey (S-19: 80mm thk concrete sleeper)",1500,407,pcs,,,"Net 397 + 10 spare; 370 installed full length, 6 cut to 1462, 4 cut to 1092, 17 cut to 741 on site"
+12,Concrete pier,"Bored concrete pier dia 600mm (drill + pour, steel post cast in)",3100,1,pcs,,,Concrete 0.88 m3
+13,Concrete pier,"Bored concrete pier dia 600mm (drill + pour, steel post cast in)",2900,7,pcs,,,Concrete 5.74 m3
+14,Concrete pier,"Bored concrete pier dia 600mm (drill + pour, steel post cast in)",2700,7,pcs,,,Concrete 5.34 m3
+15,Concrete pier,"Bored concrete pier dia 600mm (drill + pour, steel post cast in)",2100,17,pcs,,,Concrete 10.09 m3
+16,Concrete pier,"Bored concrete pier dia 450mm (drill + pour, steel post cast in)",1500,10,pcs,,,Concrete 2.39 m3
+,Concrete pier,Total concrete for piers,,24.44,m3,,,42 piers
 ,Notes,"Ringwood VIC - retaining wall, order zone (west boundary wall + NW pocket walls + north wall to x 36.8 m)",,41,bays,,,Post spacing 1530 c/c; please quote delivery to site separately; quantities from 3D model
