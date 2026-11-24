@@ -28,11 +28,11 @@ Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,4,pcs,
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey),1500,17,pcs,,,Cut on site from 1500 to 741
 Sleeper,Net quantity from model,,352,pcs,,,
 Sleeper,Plain Smooth 1500 x 200 x 80mm Concrete Sleeper (Plain Grey) - ORDER,1500,362,pcs,37.40,13538.80,Net 352 + 10 spare
-Concrete pier (by others),Bored concrete pier dia 600mm,2875,1,pcs,,,Concrete 0.81 m3
-Concrete pier (by others),Bored concrete pier dia 600mm,2675,7,pcs,,,Concrete 5.29 m3
-Concrete pier (by others),Bored concrete pier dia 600mm,2475,7,pcs,,,Concrete 4.90 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,2825,1,pcs,,,Concrete 0.80 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,2625,7,pcs,,,Concrete 5.20 m3
+Concrete pier (by others),Bored concrete pier dia 600mm,2425,7,pcs,,,Concrete 4.80 m3
 Concrete pier (by others),Bored concrete pier dia 600mm,2100,16,pcs,,,Concrete 9.50 m3
 Concrete pier (by others),Bored concrete pier dia 450mm,1500,11,pcs,,,Concrete 2.62 m3
-Concrete pier (by others),Subtotal,,42,pcs,,,"Concrete approx. 23.13 m3; post embedment: 1400 (exposed <=1400), 2000 (exposed <=2000), or 1:1 = exposed length (exposed >2000, 15 posts); hole depth = embedment + 100"
+Concrete pier (by others),Subtotal,,42,pcs,,,"Concrete approx. 22.92 m3; post embedment: 1400 (exposed <=1400), 2000 (exposed <=2000), or 1:1 = exposed length (exposed >2000, 15 posts); hole depth = embedment + 100"
 TOTAL,Sunset Sleepers items (steel posts + sleepers),,,,,27038.37,Retail prices inc. GST from sunsetsleepers.com.au on 2026-11-17 (VIC); trade pricing may be lower; delivery not included
 Notes,Order zone = west boundary wall + both NW pocket walls + north wall to x 36.8 m,,41,bays,,,Post spacing 1530 c/c; source ringwood_r1_rw.json (rw_prep.py)
